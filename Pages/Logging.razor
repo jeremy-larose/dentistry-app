@@ -1,0 +1,40 @@
+﻿@page "/logging"
+
+<h1 class="text-4xl font-bold mb-4">Logging</h1>
+<div class="flex justify-center">
+    <div class="row">
+        <button class="mt-4 bg-gradient-to-br from-green-600 to-green-400 hover:from-green-400 hover:to-green-600 text-white text-shadow-xl p-2 rounded border border-green-400" @onclick="LogWarning">
+            Log Warning with Serilog
+        </button>
+    </div>
+    <div class="row">
+        <button class="mt-4 bg-gradient-to-br from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white text-shadow-xl p-2 rounded border border-yellow-600" @onclick="LogError">
+
+            Log Error with Serilog
+        </button>
+    </div>
+    <div class="row">
+        <button class="mt-4 bg-gradient-to-br from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white text-shadow-xl p-2 rounded border border-blue-600" @onclick="LogInfo">
+
+            Log Info with Serilog
+        </button>
+    </div>
+</div>
+@code {
+
+    private void LogWarning()
+    {
+        Log.Warning("This is a warning!");
+    }
+
+    private void LogError()
+    {
+        Log.Error("This is an error!");
+    }
+
+    private void LogInfo()
+    {
+        Log.Information("This is information.");
+    }
+
+}

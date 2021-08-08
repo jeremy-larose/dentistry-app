@@ -1,0 +1,17 @@
+﻿@page "/"
+@using Microsoft.Extensions.Logging
+
+
+<h1 class="text-4xl font-bold mb-4 mt-[111px]">Hello, world!</h1>
+
+Welcome to your new app.
+
+@code {
+
+    private void LogMessage()
+    {
+        Log.Warning( "Warning from ILogger.");
+        Log.Information( "Informational message.");
+        Log.Error( "This is a dumpster fire!");
+    }
+}
